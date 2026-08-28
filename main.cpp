@@ -186,8 +186,6 @@ int main(int, char**)
         {
             static float f = 0.0f;
             static int counter = 0;
-            static float blender_float = 1.0f;
-            static int blender_int = 1;
 
             ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 
@@ -195,11 +193,8 @@ int main(int, char**)
             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
             ImGui::Checkbox("Another Window", &show_another_window);
 
-            ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+            DragFloatInfinite("infinidrag", &f, 0.1f);
             ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-            DragFloatEx("blender float", &blender_float);
-            DragIntEx("blender int", &blender_int);
 
             if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
                 counter++;
