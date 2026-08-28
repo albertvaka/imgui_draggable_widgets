@@ -1,0 +1,3 @@
+*.o
+example_sdl2_opengl3 
+imgui.ini
